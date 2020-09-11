@@ -176,8 +176,8 @@ class ApiService {
 		}
 
 		$iError->setCode($result->status);
-		if (sizeof($result->errors) > 0) {
-			foreach ($result->errors as $error) {
+		if (sizeof(is_array($result->errors) ) > 0) {
+			foreach (is_array($result->errors) as $error) {
 				$iError->setMessage($error->field . ' - ' . $error->message);
 			}
 		}
